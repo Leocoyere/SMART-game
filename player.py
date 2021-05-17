@@ -14,34 +14,34 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         self.weakness = weakness
         self.name = name
-        self.portrait = pygame.transform.scale( pygame.image.load("assets/" + self.name + "/portrait/portrait.png"), (200,200))
+        self.portrait = pygame.transform.scale( pygame.image.load("characters/" + self.name + "/portrait/portrait.png"), (200,200))
         self.IQ = 100
         self.IQ_verif = 100
         self.number = number
-        self.voice = [ pygame.mixer.Sound("assets/" + self.name + "/voice/voice_1.ogg"), pygame.mixer.Sound("assets/" + self.name + "/voice/voice_2.ogg")]
+        self.voice = [ pygame.mixer.Sound("characters/" + self.name + "/voice/voice_1.ogg"), pygame.mixer.Sound("characters/" + self.name + "/voice/voice_2.ogg")]
         self.special = False
         self.game = game
         self.final = False
         self.words = []
         self.screen = screen
         self.words_special = specials_words
-        self.dead = [ "assets/" + self.name + "/dead/dead_1.png", "assets/" + self.name + "/dead/dead_2.png", "assets/" + self.name + "/dead/dead_3.png", "assets/" + self.name + "/dead/dead_4.png", "assets/" + self.name + "/dead/dead_5.png", "assets/" + self.name + "/dead/dead_6.png", "assets/" + self.name + "/dead/dead_7.png", "assets/" + self.name + "/dead/dead_8.png"]
+        self.dead = [ "characters/" + self.name + "/dead/dead_1.png", "characters/" + self.name + "/dead/dead_2.png", "characters/" + self.name + "/dead/dead_3.png", "characters/" + self.name + "/dead/dead_4.png", "characters/" + self.name + "/dead/dead_5.png", "characters/" + self.name + "/dead/dead_6.png", "characters/" + self.name + "/dead/dead_7.png", "characters/" + self.name + "/dead/dead_8.png"]
         if number == 1:
-            self.static = pygame.transform.scale( pygame.image.load("assets/" + self.name + "/static.png"), (200,200) )
-            self.image = pygame.transform.scale( pygame.image.load("assets/" + self.name + "/static.png"), (200,200) )
+            self.static = pygame.transform.scale( pygame.image.load("characters/" + self.name + "/static.png"), (200,200) )
+            self.image = pygame.transform.scale( pygame.image.load("characters/" + self.name + "/static.png"), (200,200) )
             self.rect = self.image.get_rect()
             self.rect.x = 300
             self.rect.y = HEIGTH - 350
-            self.finalbutton = Button(50, HEIGTH-130, 'assets/elements/button.png')
-            self.textblock = [ pygame.image.load('assets/elements/player_block.png') , 50, 150 ]
+            self.finalbutton = Button(50, HEIGTH-130, 'characters/elements/button.png')
+            self.textblock = [ pygame.image.load('characters/elements/player_block.png') , 50, 150 ]
         if number == 2:
-            self.static = pygame.transform.flip(pygame.transform.scale( pygame.image.load("assets/" + self.name + "/static.png"), (200,200) ), 180, 0)
-            self.image = pygame.transform.flip(pygame.transform.scale( pygame.image.load("assets/" + self.name + "/static.png"), (200,200) ), 180, 0)
+            self.static = pygame.transform.flip(pygame.transform.scale( pygame.image.load("characters/" + self.name + "/static.png"), (200,200) ), 180, 0)
+            self.image = pygame.transform.flip(pygame.transform.scale( pygame.image.load("characters/" + self.name + "/static.png"), (200,200) ), 180, 0)
             self.rect = self.image.get_rect()
             self.rect.x = 850
             self.rect.y = HEIGTH - 350
-            self.finalbutton = Button(1200 , HEIGTH-130, 'assets/elements/button.png')
-            self.textblock = [ pygame.image.load('assets/elements/player_block.png') , 1050, 150 ]
+            self.finalbutton = Button(1200 , HEIGTH-130, 'characters/elements/button.png')
+            self.textblock = [ pygame.image.load('characters/elements/player_block.png') , 1050, 150 ]
 
     def display(self, enemy):
         """ Cette fonction met à jour les états du joueur """
