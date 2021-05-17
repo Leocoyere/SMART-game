@@ -52,18 +52,18 @@ class Pauseblock(pygame.sprite.Sprite):
     
     def __init__(self, screen, game):
         super().__init__()
-        self.image = pygame.image.load("assets/elements/pause_menu.png")
+        self.image = pygame.image.load("elements/pause_menu.png")
         self.rect = self.image.get_rect()
         self.rect.x = WIDTH / 2 - 162
         self.rect.y = HEIGTH / 2 - 156
         self.screen = screen
         self.game = game
         # boutons présents dans le menu
-        self.button = Button((WIDTH/2 + -54), (HEIGTH - 130), "assets/elements/pause.png")
-        self.home = Button((WIDTH/2 - 162 + 70), (HEIGTH/2 - 156 + 100), "assets/elements/home.png")
-        self.sound = Button((WIDTH/2 + 162 - 70 - 82), (HEIGTH/2 - 156 + 100), "assets/elements/sound_on.png")
-        self.resume = Button((WIDTH/2 + 75 - 153), (HEIGTH/2 - 156 + 100 + 30 + 68), "assets/elements/resume.png")
-
+        self.button = Button((WIDTH/2 + -54), (HEIGTH - 130), "elements/pause.png")
+        self.home = Button((WIDTH/2 - 162 + 70), (HEIGTH/2 - 156 + 100), "elements/home.png")
+        self.sound = Button((WIDTH/2 + 162 - 70 - 82), (HEIGTH/2 - 156 + 100), "elements/sound_on.png")
+        self.resume = Button((WIDTH/2 + 75 - 153), (HEIGTH/2 - 156 + 100 + 30 + 68), "elements/resume.png")
+        
     def display(self):
         """ Cette fonction vérifie si le jeu est en pause, quand c'est le cas, elle affiche le menu pause """
         if self.game.paused:
@@ -78,13 +78,13 @@ class Pauseblock(pygame.sprite.Sprite):
         # si le son du jeu est activé
         if self.game.sound:
             # on change l'image du son
-            self.sound.image = pygame.image.load("assets/elements/sound_off.png")
+            self.sound.image = pygame.image.load("elements/sound_off.png")
             # et on coupe le son du jeu
             self.game.sound = False
         # si le son est désactivé
         elif self.game.sound == False:
             # on change l'image du son
-            self.sound.image = pygame.image.load("assets/elements/sound_on.png")
+            self.sound.image = pygame.image.load("elements/sound_on.png")
             # et on allume le son du jeu
             self.game.sound = True
             # si le match est en cours
@@ -102,7 +102,7 @@ class Wordbutton(pygame.sprite.Sprite):
 
     def __init__(self, number, x, y):
         super().__init__()
-        self.image = pygame.image.load("assets/elements/wordbutton.png")
+        self.image = pygame.image.load("elements/wordbutton.png")
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
@@ -114,10 +114,10 @@ class Database(pygame.sprite.Sprite):
 
     def __init__(self, screen):
         super().__init__()
-        self.image = pygame.image.load("assets/elements/wordbutton.png")
+        self.image = pygame.image.load("elements/wordbutton.png")
         self.base = ""
         self.words = []
-        self.font = pygame.font.Font('assets/font/Passion_One/PassionOne-Regular.ttf', 20)
+        self.font = pygame.font.Font('font/Passion_One/PassionOne-Regular.ttf', 20)
         self.text_pos = [ [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)], [self.font.render("", True, (33,33,33)), (150, 150)] ]
         self.screen = screen
         self.rect = self.image.get_rect( center = ( 90,30 ) )
