@@ -9,7 +9,7 @@ class Word(pygame.sprite.Sprite):
     def __init__(self, element, name, damage, type_word):
         super().__init__()
         self.name = name
-        self.font_text = pygame.font.Font('assets/font/Passion_One/PassionOne-Regular.ttf', 25)
+        self.font_text = pygame.font.Font('font/Passion_One/PassionOne-Regular.ttf', 25)
         self.text_name = [self.font_text.render(self.name, True, (255,255,255)), (369, 200)]
         self.element = element
         self.damage = damage
@@ -22,8 +22,8 @@ class Warningblock(pygame.sprite.Sprite):
     def __init__(self, screen):
         super().__init__()
         self.message = ""
-        self.image = pygame.image.load("assets/elements/warning.png")
-        self.font_text = pygame.font.Font('assets/font/Passion_One/PassionOne-Regular.ttf', 25)
+        self.image = pygame.image.load("elements/warning.png")
+        self.font_text = pygame.font.Font('font/Passion_One/PassionOne-Regular.ttf', 25)
         self.rect = self.image.get_rect()
         self.rect.x = WIDTH / 2 - 185 
         self.rect.y = HEIGTH / 2 - 149
@@ -164,12 +164,12 @@ class Characterblock(pygame.sprite.Sprite):
     def __init__(self, screen, name, x, y):
         super().__init__()
         self.screen = screen
-        self.image = pygame.transform.scale(pygame.image.load("assets/" + name + "/portrait/portrait.png"), (200,200))
+        self.image = pygame.transform.scale(pygame.image.load("characters/" + name + "/portrait/portrait.png"), (200,200))
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.info = Button((self.rect.x + 50 - 41), (self.rect.y + 200 + 50 - 43), "assets/elements/info.png")
-        self.choose = Button((self.rect.x + 200 - 50 - 41), (self.rect.y + 200 + 50 - 43), "assets/elements/valid.png")
+        self.info = Button((self.rect.x + 50 - 41), (self.rect.y + 200 + 50 - 43), "elements/info.png")
+        self.choose = Button((self.rect.x + 200 - 50 - 41), (self.rect.y + 200 + 50 - 43), "elements/valid.png")
     
     def display(self):
         self.screen.blit( self.info.image, self.info.rect)
@@ -182,13 +182,13 @@ class CharacterCV(pygame.sprite.Sprite):
     def __init__(self, screen, name, text):
         super().__init__()
         self.screen = screen
-        self.image = pygame.transform.scale(pygame.image.load( "assets/" + name + "/static.png" ), (200,200))
-        self.jump = [ "assets/" + name + "/jump/jump_1.png", "assets/" + name + "/jump/jump_2.png", "assets/" + name + "/jump/jump_3.png", "assets/" + name + "/jump/jump_4.png", "assets/" + name + "/jump/jump_5.png", "assets/" + name + "/jump/jump_6.png", "assets/" + name + "/jump/jump_7.png", "assets/" + name + "/jump/jump_8.png" ]
-        self.font = pygame.font.Font('assets/font/Passion_One/PassionOne-Regular.ttf', 25)
-        self.weakness = pygame.image.load( "assets/" + name + "/weaknesses/weakness.png" )
+        self.image = pygame.transform.scale(pygame.image.load( "characters/" + name + "/static.png" ), (200,200))
+        self.jump = [ "characters/" + name + "/jump/jump_1.png", "characters/" + name + "/jump/jump_2.png", "characters/" + name + "/jump/jump_3.png", "characters/" + name + "/jump/jump_4.png", "characters/" + name + "/jump/jump_5.png", "characters/" + name + "/jump/jump_6.png", "characters/" + name + "/jump/jump_7.png", "characters/" + name + "/jump/jump_8.png" ]
+        self.font = pygame.font.Font('font/Passion_One/PassionOne-Regular.ttf', 25)
+        self.weakness = pygame.image.load( "characters/" + name + "/weaknesses/weakness.png" )
         self.text = text
-        self.name = pygame.image.load( "assets/" + name + "/name/" + name + ".png" )
-        self.back = Button( (80 - 41), (80 - 42), "assets/elements/group.png")
+        self.name = pygame.image.load( "characters/" + name + "/name/" + name + ".png" )
+        self.back = Button( (80 - 41), (80 - 42), "elements/group.png")
 
     def display(self):
         """ Cette fonction affiche l'écran de présentation du personnage"""
