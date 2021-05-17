@@ -32,23 +32,23 @@ class Player(pygame.sprite.Sprite):
             self.rect = self.image.get_rect()
             self.rect.x = 300
             self.rect.y = HEIGTH - 350
-            self.finalbutton = Button(50, HEIGTH-130, 'characters/elements/button.png')
-            self.textblock = [ pygame.image.load('characters/elements/player_block.png') , 50, 150 ]
+            self.finalbutton = Button(50, HEIGTH-130, 'elements/button.png')
+            self.textblock = [ pygame.image.load('elements/player_block.png') , 50, 150 ]
         if number == 2:
             self.static = pygame.transform.flip(pygame.transform.scale( pygame.image.load("characters/" + self.name + "/static.png"), (200,200) ), 180, 0)
             self.image = pygame.transform.flip(pygame.transform.scale( pygame.image.load("characters/" + self.name + "/static.png"), (200,200) ), 180, 0)
             self.rect = self.image.get_rect()
             self.rect.x = 850
             self.rect.y = HEIGTH - 350
-            self.finalbutton = Button(1200 , HEIGTH-130, 'characters/elements/button.png')
-            self.textblock = [ pygame.image.load('characters/elements/player_block.png') , 1050, 150 ]
+            self.finalbutton = Button(1200 , HEIGTH-130, 'elements/button.png')
+            self.textblock = [ pygame.image.load('elements/player_block.png') , 1050, 150 ]
 
     def display(self, enemy):
         """ Cette fonction met à jour les états du joueur """
         # si le QI du joueur  est différent du QI qu'il avait avant, c'est qu'il à été blessé
         if self.IQ != self.IQ_verif:
             # on joue le son de blessure
-            pygame.mixer.Sound("assets/sounds/hurted.ogg").play()
+            pygame.mixer.Sound("sounds/hurted.ogg").play()
             # on appelle la fonction du jeu qui affiche les images du joueur blessé
             self.game.hurt_player(self.screen, self)
             # on remet le QI de vérification égal au QI   
@@ -109,11 +109,11 @@ class Player(pygame.sprite.Sprite):
         # si c'est le joueur 1
         if self.number == 1:
             # on affiche sa barre de QI à l'emplacement du conteneur 1
-            surface.blit(pygame.transform.scale( pygame.image.load('assets/elements/IQ.png'), (int(self.IQ * 2.45), 34) ), (253, HEIGTH - 87))
+            surface.blit(pygame.transform.scale( pygame.image.load('elements/IQ.png'), (int(self.IQ * 2.45), 34) ), (253, HEIGTH - 87))
         # si c'est le joueur 2
         if self.number == 2:
             # on affiche sa barre de QI à l'emplacement du conteneur 2
-            surface.blit(pygame.transform.scale( pygame.image.load('assets/elements/IQ.png'), (int(self.IQ * 2.45), 34) ), (883, HEIGTH - 87))
+            surface.blit(pygame.transform.scale( pygame.image.load('elements/IQ.png'), (int(self.IQ * 2.45), 34) ), (883, HEIGTH - 87))
 
     def add_word(self, word):
         """ Cette fonction ajoute le mot qu'on lui donne à la phrase du joueur après 
