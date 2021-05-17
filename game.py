@@ -9,10 +9,10 @@ class Game:
 
     def __init__(self, screen):
         # ÉCRAN TITRE
-        self.logo = pygame.image.load( "assets/elements/logo.png" )
-        self.start = Button((WIDTH/2 - 41 -100), (HEIGTH/2 + 62.5 + 43), "assets/elements/play.png")
-        self.contact = Button((WIDTH/2 - 41 +100), (HEIGTH/2 + 62.5 + 43), "assets/elements/contact.png")
-        self.settings = Button((WIDTH/2 - 41), (HEIGTH/2 + 62.5 + 43), "assets/elements/settings.png")
+        self.logo = pygame.image.load( "elements/logo.png" )
+        self.start = Button((WIDTH/2 - 41 -100), (HEIGTH/2 + 62.5 + 43), "elements/play.png")
+        self.contact = Button((WIDTH/2 - 41 +100), (HEIGTH/2 + 62.5 + 43), "elements/contact.png")
+        self.settings = Button((WIDTH/2 - 41), (HEIGTH/2 + 62.5 + 43), "elements/settings.png")
             # MENU CONTACT
         self.contact_menu = False
         
