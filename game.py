@@ -112,12 +112,12 @@ class Game:
         self.end = False
         # SOUNDS
         self.sound = True
-        self.fight_theme = pygame.mixer.Sound("assets/sounds/theme.ogg")
-        self.main_theme = pygame.mixer.Sound("assets/sounds/main_theme.ogg")
-        self.open = pygame.mixer.Sound("assets/sounds/open.ogg")
-        self.close = pygame.mixer.Sound("assets/sounds/close.ogg")
-        self.select = pygame.mixer.Sound("assets/sounds/select.ogg")
-        self.play = pygame.mixer.Sound("assets/sounds/start.ogg")
+        self.fight_theme = pygame.mixer.Sound("sounds/theme.ogg")
+        self.main_theme = pygame.mixer.Sound("sounds/main_theme.ogg")
+        self.open = pygame.mixer.Sound("sounds/open.ogg")
+        self.close = pygame.mixer.Sound("sounds/close.ogg")
+        self.select = pygame.mixer.Sound("sounds/select.ogg")
+        self.play = pygame.mixer.Sound("sounds/start.ogg")
 
     # FUNCTIONS #
     
@@ -125,24 +125,24 @@ class Game:
         """ Cette fonction affiche les informations sur un des personnages jouables """
         if number == 1:
             if self.sound:
-                pygame.mixer.Sound("assets/sounds/boing.ogg").play()
+                pygame.mixer.Sound("sounds/boing.ogg").play()
             self.character1_cv.display()
         elif number == 2:
             if self.sound:
-                pygame.mixer.Sound("assets/sounds/boing.ogg").play()
+                pygame.mixer.Sound("sounds/boing.ogg").play()
             self.character2_cv.display()
         elif number == 3:
             if self.sound:
-                pygame.mixer.Sound("assets/sounds/boing.ogg").play()
+                pygame.mixer.Sound("sounds/boing.ogg").play()
             self.character3_cv.display()
             
     def characters_list(self, screen):
         """ Cette fonction affiche la liste des personnages jouables """
         screen.fill((0,150,200))
         if self.choose_1:
-            screen.blit( pygame.image.load( "assets/elements/choose_1.png" ), (WIDTH/2 - 281, 50) )
+            screen.blit( pygame.image.load( "elements/choose_1.png" ), (WIDTH/2 - 281, 50) )
         elif self.choose_2:
-            screen.blit( pygame.image.load( "assets/elements/choose_2.png" ), (WIDTH/2 - 281, 50) )
+            screen.blit( pygame.image.load( "elements/choose_2.png" ), (WIDTH/2 - 281, 50) )
         screen.blit( self.character1.image, self.character1.rect )
         screen.blit( self.character2.image, self.character2.rect )
         screen.blit( self.character3.image, self.character3.rect )
@@ -207,11 +207,11 @@ class Game:
 
     def contacts(self, screen):
         """ Cette fonction affiche le menu contact """
-        screen.blit( pygame.image.load("assets/elements/contact_menu.png"), (WIDTH/2 - 223,HEIGTH/2 - 220) ) # bloc de fond
-        screen.blit( pygame.image.load("assets/elements/linkedin.png"), (WIDTH/2 - 223 + 100 - 35,HEIGTH/2 - 220 + 100 - 35) ) # logo linkedin
-        screen.blit( pygame.image.load("assets/elements/linkedin_name.png"), (WIDTH/2 - 223 + 70 + 108 + 20 - 35,HEIGTH/2 - 220 + 100 - 35 + 16) ) # nom linkedin
-        screen.blit( pygame.image.load("assets/elements/github.png"), (WIDTH/2 - 223 + 100 - 35,HEIGTH/2 + 90 - 100 - 34) ) # logo github
-        screen.blit( pygame.image.load("assets/elements/github_name.png"), (WIDTH/2 - 223 + 71 + 108 + 20 - 35,HEIGTH/2 + 90 - 100 - 34 + 17) ) # nom github
+        screen.blit( pygame.image.load("elements/contact_menu.png"), (WIDTH/2 - 223,HEIGTH/2 - 220) ) # bloc de fond
+        screen.blit( pygame.image.load("elements/linkedin.png"), (WIDTH/2 - 223 + 100 - 35,HEIGTH/2 - 220 + 100 - 35) ) # logo linkedin
+        screen.blit( pygame.image.load("elements/linkedin_name.png"), (WIDTH/2 - 223 + 70 + 108 + 20 - 35,HEIGTH/2 - 220 + 100 - 35 + 16) ) # nom linkedin
+        screen.blit( pygame.image.load("elements/github.png"), (WIDTH/2 - 223 + 100 - 35,HEIGTH/2 + 90 - 100 - 34) ) # logo github
+        screen.blit( pygame.image.load("elements/github_name.png"), (WIDTH/2 - 223 + 71 + 108 + 20 - 35,HEIGTH/2 + 90 - 100 - 34 + 17) ) # nom github
 
     def end_game(self, screen, dead, notdead):
         """ Cette fonction affiche la fin du jeu, elle prend en paramètres le joueur mort, et le joueur encore en vie """
@@ -230,8 +230,8 @@ class Game:
             # on affiche le bouton du menu pause
             screen.blit( self.menu.button.image, self.menu.button.rect )
             # on affiche les conteneurs des barres de QI des deux personnages
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), (200, HEIGTH - 100) )
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), (200, HEIGTH - 100) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
             dead.QIbar(screen) # et on
             notdead.QIbar(screen) # les remplit
             # on change le message du warningblock avec le nom du joueur gagnant
@@ -371,8 +371,8 @@ class Game:
             screen.blit(isplaying.finalbutton.image, isplaying.finalbutton.rect)
 
             # on affiche les conteneurs des barres de QI des deux personnages
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), (200, HEIGTH - 100) )
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), (200, HEIGTH - 100) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
             isplaying.QIbar(screen) # et on
             isnotplaying.QIbar(screen) # les remplit
             # on appelle la fonction qui met à jour le message d'erreur
@@ -389,13 +389,13 @@ class Game:
             # si c'est le joueur 1
             if player_hurted.number == 1:
                 # on affiche normalement son image
-                screen.blit( pygame.transform.scale(pygame.image.load("assets/" + player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), player_hurted.rect )
+                screen.blit( pygame.transform.scale(pygame.image.load(player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), player_hurted.rect )
                 # et on affiche l'image du joueur 2
                 screen.blit( self.player_2.image, self.player_2.rect )
             # si c'est le joueur 2
             elif player_hurted.number == 2:
                 # on affiche son image retournée
-                screen.blit( pygame.transform.flip( pygame.transform.scale(pygame.image.load("assets/" + player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), 180, 0), player_hurted.rect )
+                screen.blit( pygame.transform.flip( pygame.transform.scale(pygame.image.load(player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), 180, 0), player_hurted.rect )
                 # et on affiche l'image du joueur 1
                 screen.blit( self.player_1.image, self.player_1.rect )
             # on affiche les blocs de texte des deux joueurs
@@ -412,8 +412,8 @@ class Game:
             self.database.display(0)
 
             # on affiche les conteneurs des barres de QI des deux personnages
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), (200, HEIGTH - 100) )
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), (200, HEIGTH - 100) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
             self.player_1.QIbar(screen) # et on
             self.player_2.QIbar(screen) # les remplit
             # on rafraichît l'écran
@@ -427,10 +427,10 @@ class Game:
         for i in range(1,4):
             screen.fill((0,150,200))
             if player_idea.number == 1:
-                screen.blit( pygame.transform.scale(pygame.image.load("assets/" + player_idea.name + "/idea/idea_" + str(i) + ".png"), (200, 200)), player_idea.rect )
+                screen.blit( pygame.transform.scale(pygame.image.load(player_idea.name + "/idea/idea_" + str(i) + ".png"), (200, 200)), player_idea.rect )
                 screen.blit( self.player_2.image, self.player_2.rect )
             elif player_idea.number == 2:
-                screen.blit( pygame.transform.flip( pygame.transform.scale(pygame.image.load("assets/" + player_idea.name + "/idea/idea_" + str(i) + ".png"), (200, 200)), 180, 0), player_idea.rect )
+                screen.blit( pygame.transform.flip( pygame.transform.scale(pygame.image.load(player_idea.name + "/idea/idea_" + str(i) + ".png"), (200, 200)), 180, 0), player_idea.rect )
                 screen.blit( self.player_1.image, self.player_1.rect )
             screen.blit( self.player_1.textblock[0], (self.player_1.textblock[1], self.player_1.textblock[2] ))
             screen.blit( self.player_2.textblock[0], (self.player_2.textblock[1], self.player_2.textblock[2] ))
@@ -440,9 +440,9 @@ class Game:
             self.database.all_buttons.draw(screen)
             self.database.display(0)
 
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), (200, HEIGTH - 100) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), (200, HEIGTH - 100) )
             self.player_1.QIbar(screen)
-            screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
+            screen.blit( pygame.image.load( "elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
             self.player_2.QIbar(screen)
             pygame.display.flip()
             pygame.time.wait(200)
@@ -464,9 +464,9 @@ class Game:
         self.database.all_buttons.draw(screen)
         self.database.display(0)
 
-        screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), (200, HEIGTH - 100) )
+        screen.blit( pygame.image.load( "elements/IQ_bar.png" ), (200, HEIGTH - 100) )
         self.player_1.QIbar(screen)
-        screen.blit( pygame.image.load( "assets/elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
+        screen.blit( pygame.image.load( "elements/IQ_bar.png" ), ( 830, HEIGTH - 100 ) )
         self.player_2.QIbar(screen)
         pygame.display.flip()
 
