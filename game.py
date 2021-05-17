@@ -389,13 +389,13 @@ class Game:
             # si c'est le joueur 1
             if player_hurted.number == 1:
                 # on affiche normalement son image
-                screen.blit( pygame.transform.scale(pygame.image.load(player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), player_hurted.rect )
+                screen.blit( pygame.transform.scale(pygame.image.load("characters/" + player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), player_hurted.rect )
                 # et on affiche l'image du joueur 2
                 screen.blit( self.player_2.image, self.player_2.rect )
             # si c'est le joueur 2
             elif player_hurted.number == 2:
                 # on affiche son image retournée
-                screen.blit( pygame.transform.flip( pygame.transform.scale(pygame.image.load(player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), 180, 0), player_hurted.rect )
+                screen.blit( pygame.transform.flip( pygame.transform.scale(pygame.image.load("characters/" + player_hurted.name + "/hurt/hurt_" + str(i) + ".png"), (200, 200)), 180, 0), player_hurted.rect )
                 # et on affiche l'image du joueur 1
                 screen.blit( self.player_1.image, self.player_1.rect )
             # on affiche les blocs de texte des deux joueurs
